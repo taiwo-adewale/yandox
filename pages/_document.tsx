@@ -9,7 +9,7 @@ import Document, {
 } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import { AppType } from "next/app";
-import { manrope } from "./_app";
+import { manrope } from "utils/theme";
 import createEmotionCache from "utils/createEmotionCache";
 import { MyAppProps } from "./_app";
 

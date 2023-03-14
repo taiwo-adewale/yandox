@@ -1,3 +1,9 @@
 export { default as Logo } from "./Logo";
 export { default as SwitchTheme } from "./SwitchTheme";
 export { default as LatestSales } from "./LatestSales";
+export { default as DashboardCards } from "./DashboardCards";
+export { default as PropertyReferrals } from "./PropertyReferrals";
+export { default as TopAgent } from "./TopAgent";
+export { default as PaginationComponent } from "./PaginationComponent";
+export { default as AgentDetails } from "./AgentDetails";
+export { default as PropertyList } from "./PropertyList";

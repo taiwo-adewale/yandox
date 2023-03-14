@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Stack, Typography, Box } from "@mui/material";
+import { Stack, Typography, Box, IconButton } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import propImage1 from "public/assets/property-1.jpg";
 import propImage2 from "public/assets/property-2.jpg";
@@ -34,6 +34,7 @@ function LatestSales() {
         p: "1.25rem",
         backgroundColor: "cardBg",
         borderRadius: "0.625rem",
+        width: "100%",
       }}
       spacing="1.25rem"
     >
@@ -42,14 +43,13 @@ function LatestSales() {
           Latest Sales
         </Typography>
 
-        <ArrowForwardIcon
-          sx={{
-            color: "textSecondary.main",
-            "&:hover": { color: "primary.main" },
-            cursor: "pointer",
-            transition: "all 0.3s",
-          }}
-        />
+        <IconButton aria-label="go to latest sales page">
+          <ArrowForwardIcon
+            sx={{
+              color: "textSecondary.main",
+            }}
+          />
+        </IconButton>
       </Stack>
 
       {latestSales.map((item, index) => (
