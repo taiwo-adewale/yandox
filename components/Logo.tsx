@@ -52,7 +52,7 @@ function Logo({ mobile, setMobileOpen }: IProps) {
             marginLeft: "0.5rem",
           }}
         >
-          Yandex
+          Yandox
         </Typography>
       </Button>
     </Box>
