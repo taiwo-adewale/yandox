@@ -6,6 +6,8 @@ import {
   PropertyReferrals,
   TopAgent,
   LatestSales,
+  TotalRevenue,
+  Customers,
 } from "components";
 
 export default function Home() {
@@ -22,10 +24,10 @@ export default function Home() {
             columnGap: "1.25rem",
           }}
         >
-          <PropertyReferrals width={65} rowItems={2} />
+          <TotalRevenue width={65} rowItems={2} />
           <PropertyReferrals width={35} rowItems={2} />
           <TopAgent width={33} rowItems={3} />
-          <TopAgent width={30} rowItems={3} />
+          <Customers width={30} rowItems={3} />
           <LatestSales width={37} rowItems={3} />
         </Box>
 

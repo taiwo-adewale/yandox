@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Stack, Typography, Box, CircularProgress } from "@mui/material";
 
+import { dashboardCards as cards } from "utils/data";
+
 interface ICardProps {
   title: string;
   color: string;
@@ -9,33 +11,6 @@ interface ICardProps {
 }
 
 function DashboardCards() {
-  const cards = [
-    {
-      title: "Properties for Sale",
-      value: 684,
-      color: "#475BE8",
-      progress: 77,
-    },
-    {
-      title: "Properties for Rent",
-      value: 546,
-      color: "#FD8539",
-      progress: 61,
-    },
-    {
-      title: "Total Customer",
-      value: 5632,
-      color: "#2ED480",
-      progress: 82,
-    },
-    {
-      title: "Total City",
-      value: 90,
-      color: "#FE6D8E",
-      progress: 58,
-    },
-  ];
-
   return (
     <Box
       display="grid"

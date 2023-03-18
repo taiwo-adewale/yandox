@@ -2,32 +2,10 @@ import Image from "next/image";
 
 import { Stack, Typography, Box, IconButton } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import propImage1 from "public/assets/property-1.jpg";
-import propImage2 from "public/assets/property-2.jpg";
-import propImage3 from "public/assets/property-3.jpg";
+
+import { latestSales } from "utils/data";
 
 function LatestSales({ width, rowItems }: LayoutWidth) {
-  const latestSales = [
-    {
-      image: propImage1,
-      name: "Metro Jayakar Apartment",
-      location: "North Carolina, USA",
-      price: 35,
-    },
-    {
-      image: propImage2,
-      name: "Letdo Ji Hotel & Aportment",
-      location: "Carolina North, UK",
-      price: 40,
-    },
-    {
-      image: propImage3,
-      name: "Metro Jayakar Apartment",
-      location: "North Carolina, USA",
-      price: 55,
-    },
-  ];
-
   return (
     <Stack
       sx={{
@@ -36,7 +14,7 @@ function LatestSales({ width, rowItems }: LayoutWidth) {
         borderRadius: "0.625rem",
         width: {
           xs: "100%",
-          lg: "calc(50% - 0.625rem)",
+          md: "calc(50% - 0.625rem)",
           xl: `calc(${width}% - ${(1.25 * (rowItems - 1)) / rowItems}rem)`,
         },
       }}

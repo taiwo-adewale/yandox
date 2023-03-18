@@ -14,3 +14,5 @@ export { default as SearchBar } from "./SearchBar";
 export { default as MobileNavigation } from "./MobileNavigation";
 export { default as DesktopNavigation } from "./DesktopNavigation";
 export { default as PageContainer } from "./PageContainer";
+export { default as TotalRevenue } from "./TotalRevenue";
+export { default as Customers } from "./Customers";

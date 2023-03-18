@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Stack, Typography, Box, LinearProgress } from "@mui/material";
 
+import { referrals } from "utils/data";
+
 interface IProps {
   name: string;
   value: number;
@@ -8,34 +10,6 @@ interface IProps {
 }
 
 function PropertyReferrals({ width, rowItems }: LayoutWidth) {
-  const referrals = [
-    {
-      name: "Social Media",
-      value: 64,
-      color: "#6C5DD3",
-    },
-    {
-      name: "Marketplaces",
-      value: 40,
-      color: "#7FBA7A",
-    },
-    {
-      name: "Websites",
-      value: 50,
-      color: "#FFCE73",
-    },
-    {
-      name: "Digital Ads",
-      value: 80,
-      color: "#FFA2C0",
-    },
-    {
-      name: "Others",
-      value: 15,
-      color: "#F45252",
-    },
-  ];
-
   return (
     <Stack
       sx={{
@@ -46,7 +20,7 @@ function PropertyReferrals({ width, rowItems }: LayoutWidth) {
         paddingBottom: "2.375rem",
         width: {
           xs: "100%",
-          lg: "calc(50% - 0.625rem)",
+          md: "calc(50% - 0.625rem)",
           xl: `calc(${width}% - ${(1.25 * (rowItems - 1)) / rowItems}rem)`,
         },
       }}
@@ -54,9 +28,11 @@ function PropertyReferrals({ width, rowItems }: LayoutWidth) {
     >
       <Typography variant="h2">Property Referrals</Typography>
 
-      {referrals.map((referral, index) => (
-        <Referral key={`referral-${index}`} {...referral} />
-      ))}
+      <Stack spacing="1.25rem">
+        {referrals.map((referral, index) => (
+          <Referral key={`referral-${index}`} {...referral} />
+        ))}
+      </Stack>
     </Stack>
   );
 }

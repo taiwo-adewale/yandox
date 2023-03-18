@@ -12,11 +12,7 @@ import { NextLinkComposed } from "utils/Link";
 import { useRouter } from "next/router";
 import { Logo } from ".";
 
-import GridViewIcon from "@mui/icons-material/GridView";
-import ApartmentIcon from "@mui/icons-material/Apartment";
-import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import StarBorderPurple500RoundedIcon from "@mui/icons-material/StarBorderPurple500Rounded";
-import PermIdentityRoundedIcon from "@mui/icons-material/PermIdentityRounded";
+import { navLinks } from "utils/data";
 
 interface IProps {
   mobileOpen: boolean;
@@ -27,18 +23,6 @@ function MobileNavigation({ mobileOpen, setMobileOpen }: IProps) {
   const drawerWidth = 250;
   const router = useRouter();
   const pathname = router.pathname;
-
-  const navLinks = [
-    { name: "Dashboard", url: "/", icon: <GridViewIcon /> },
-    { name: "Property", url: "/property", icon: <ApartmentIcon /> },
-    { name: "Agent", url: "/agent", icon: <PeopleAltOutlinedIcon /> },
-    {
-      name: "Review",
-      url: "/review",
-      icon: <StarBorderPurple500RoundedIcon />,
-    },
-    { name: "My Profile", url: "/profile", icon: <PermIdentityRoundedIcon /> },
-  ];
 
   const iOS =
     typeof navigator !== "undefined" &&

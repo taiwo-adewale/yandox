@@ -49,7 +49,7 @@ function TopAgent({ width, rowItems }: LayoutWidth) {
         borderRadius: "0.625rem",
         width: {
           xs: "100%",
-          lg: "calc(50% - 0.625rem)",
+          md: "calc(50% - 0.625rem)",
           xl: `calc(${width}% - ${(1.25 * (rowItems - 1)) / rowItems}rem)`,
         },
       }}

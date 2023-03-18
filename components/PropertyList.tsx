@@ -20,65 +20,12 @@ import { Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-import propImage1 from "public/assets/property-large-1.jpg";
-import propImage2 from "public/assets/property-large-2.jpg";
-import propImage3 from "public/assets/property-large-3.jpg";
+import { properties } from "utils/data";
 
 function PropertyList() {
   const theme = useTheme();
   const [activeFilter, setActiveFilter] = useState<string>("Popular");
   const [selectFilter, setSelectFilter] = useState<string>("most-recent");
-
-  const properties = [
-    {
-      image: propImage1,
-      name: "Metro Jayakar Apartment",
-      location: "North Carolina, USA",
-      price: 500,
-    },
-    {
-      image: propImage2,
-      name: "Letdo Ji Hotel & Aportment",
-      location: "Carolina North, UK",
-      price: 450,
-    },
-    {
-      image: propImage3,
-      name: "Metro Jayakar Apartment",
-      location: "North Carolina, USA",
-      price: 650,
-    },
-    {
-      image: propImage1,
-      name: "Taiwo Adewale Apartment",
-      location: "Lagos, Nigeria",
-      price: 340,
-    },
-    {
-      image: propImage2,
-      name: "Metro Jayakar Apartment",
-      location: "North Carolina, USA",
-      price: 500,
-    },
-    {
-      image: propImage3,
-      name: "Letdo Ji Hotel & Aportment",
-      location: "Carolina North, UK",
-      price: 450,
-    },
-    {
-      image: propImage1,
-      name: "Metro Jayakar Apartment",
-      location: "North Carolina, USA",
-      price: 650,
-    },
-    {
-      image: propImage2,
-      name: "Taiwo Adewale Apartment",
-      location: "Lagos, Nigeria",
-      price: 340,
-    },
-  ];
 
   const handleChange = (event: SelectChangeEvent) => {
     setSelectFilter(event.target.value);
