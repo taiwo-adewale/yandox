@@ -1,29 +1,60 @@
-import { Typography, Box, SvgIcon, SvgIconProps } from "@mui/material";
+import { Typography, Box, SvgIcon, SvgIconProps, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { NextLinkComposed } from "utils/Link";
 
-function Logo() {
+interface IProps {
+  mobile?: Boolean;
+  setMobileOpen?: (val: boolean) => void;
+}
+
+function Logo({ mobile, setMobileOpen }: IProps) {
   const theme = useTheme();
+
+  const handleMobileClick = () => {
+    setMobileOpen && setMobileOpen(false);
+  };
 
   return (
     <Box
       sx={{
-        display: "flex",
-        alignItems: "center",
+        display: {
+          xs: mobile ? "block" : "none",
+          lg: mobile ? "none" : "block",
+        },
+        marginBottom: mobile ? "2.5rem" : 0,
       }}
     >
-      <LogoSvg color="primary" fontSize="large" />
-
-      <Typography
-        color={theme.palette.mode === "dark" ? "#6C5DD3" : "textPrimary"}
-        component="span"
-        fontWeight={700}
+      <Button
+        component={NextLinkComposed}
+        to="/"
         sx={{
-          fontSize: "25px",
-          marginLeft: "0.5rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          width: "fit-content",
+          textTransform: "none",
+          borderRadius: "0.625rem",
+          px: mobile ? "0.75rem" : "0.5rem",
+          "&:hover": {
+            background: "none",
+          },
         }}
+        onClick={handleMobileClick}
       >
-        Yandex
-      </Typography>
+        <LogoSvg color="primary" fontSize="large" />
+
+        <Typography
+          color={theme.palette.mode === "dark" ? "#6C5DD3" : "textPrimary"}
+          component="span"
+          fontWeight={700}
+          sx={{
+            fontSize: "1.5625rem !important",
+            marginLeft: "0.5rem",
+          }}
+        >
+          Yandex
+        </Typography>
+      </Button>
     </Box>
   );
 }

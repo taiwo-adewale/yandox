@@ -1,5 +1,4 @@
 import { Manrope } from "next/font/google";
-import { red } from "@mui/material/colors";
 
 // declare module "@mui/material/styles" {
 //   interface Palette {
@@ -36,7 +35,10 @@ export const lightTheme = {
       main: "#F7F7F7",
     },
     error: {
-      main: red.A400,
+      main: "#EB5757",
+    },
+    success: {
+      main: "#2ED480",
     },
     textPrimary: {
       main: "#11142D",
@@ -51,10 +53,6 @@ export const lightTheme = {
   },
   typography: {
     fontFamily: manrope.style.fontFamily,
-    h2: {
-      fontSize: "1.125rem",
-      fontWeight: 600,
-    },
     h3: {
       fontSize: "1rem",
       fontWeight: 600,
@@ -84,7 +82,10 @@ export const darkTheme = {
       main: "#111315",
     },
     error: {
-      main: red.A400,
+      main: "#EB5757",
+    },
+    success: {
+      main: "#2ED480",
     },
     textPrimary: {
       main: "#EFEFEF",
@@ -99,11 +100,6 @@ export const darkTheme = {
   },
   typography: {
     fontFamily: manrope.style.fontFamily,
-    h2: {
-      fontSize: "1.125rem",
-
-      fontWeight: 600,
-    },
     h3: {
       fontSize: "1rem",
       fontWeight: 600,

@@ -7,7 +7,7 @@ interface IProps {
   color: string;
 }
 
-function PropertyReferrals() {
+function PropertyReferrals({ width, rowItems }: LayoutWidth) {
   const referrals = [
     {
       name: "Social Media",
@@ -44,7 +44,11 @@ function PropertyReferrals() {
         px: "1.25rem",
         paddingTop: "1.25rem",
         paddingBottom: "2.375rem",
-        width: "100%",
+        width: {
+          xs: "100%",
+          lg: "calc(50% - 0.625rem)",
+          xl: `calc(${width}% - ${(1.25 * (rowItems - 1)) / rowItems}rem)`,
+        },
       }}
       spacing="1.25rem"
     >

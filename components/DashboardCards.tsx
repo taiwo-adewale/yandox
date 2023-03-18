@@ -47,6 +47,9 @@ function DashboardCards() {
       gap={2}
       rowGap="1.5625rem"
       columnGap="0.9375rem"
+      sx={{
+        px: { xs: "1.125rem", sm: "0" },
+      }}
     >
       {cards.map((card, index) => (
         <Card key={`dashboard-card-${index}`} {...card} />
@@ -86,7 +89,7 @@ function Card({ title, color, value, progress }: ICardProps) {
       }}
       direction="row"
       alignItems="center"
-      spacing="0.75rem"
+      spacing="0.625rem"
       gridColumn="span 1"
     >
       <Stack flex={1}>

@@ -106,6 +106,12 @@ function AgentDetails() {
                 PaperProps={{
                   variant: "outlined",
                   elevation: 0,
+                  sx: {
+                    borderRadius: "0.5rem",
+                    "& .MuiMenuItem-root": {
+                      fontSize: "0.875rem",
+                    },
+                  },
                 }}
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>

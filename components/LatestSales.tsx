@@ -6,7 +6,7 @@ import propImage1 from "public/assets/property-1.jpg";
 import propImage2 from "public/assets/property-2.jpg";
 import propImage3 from "public/assets/property-3.jpg";
 
-function LatestSales() {
+function LatestSales({ width, rowItems }: LayoutWidth) {
   const latestSales = [
     {
       image: propImage1,
@@ -34,7 +34,11 @@ function LatestSales() {
         p: "1.25rem",
         backgroundColor: "cardBg",
         borderRadius: "0.625rem",
-        width: "100%",
+        width: {
+          xs: "100%",
+          lg: "calc(50% - 0.625rem)",
+          xl: `calc(${width}% - ${(1.25 * (rowItems - 1)) / rowItems}rem)`,
+        },
       }}
       spacing="1.25rem"
     >

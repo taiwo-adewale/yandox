@@ -1,34 +1,36 @@
-import { Container, Box, Stack } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 import {
-  PropertyList,
-  AgentDetails,
+  PageContainer,
   DashboardCards,
-  LatestSales,
-  PaginationComponent,
+  PropertyList,
   PropertyReferrals,
   TopAgent,
+  LatestSales,
 } from "components";
 
 export default function Home() {
   return (
-    <>
-      <Container>
-        <PropertyList />
+    <PageContainer title="Dashboard">
+      <Stack spacing="1.5rem">
+        <DashboardCards />
 
-        <Box sx={{ maxWidth: "400px", mx: "auto", paddingTop: "2rem" }}>
-          <Stack spacing="2rem">
-            <LatestSales />
-            <PropertyReferrals />
-            <TopAgent />
-          </Stack>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            rowGap: "1.5rem",
+            columnGap: "1.25rem",
+          }}
+        >
+          <PropertyReferrals width={65} rowItems={2} />
+          <PropertyReferrals width={35} rowItems={2} />
+          <TopAgent width={33} rowItems={3} />
+          <TopAgent width={30} rowItems={3} />
+          <LatestSales width={37} rowItems={3} />
         </Box>
 
-        <Stack spacing="2rem" paddingTop="2rem" paddingBottom="2rem">
-          <AgentDetails />
-          <DashboardCards />
-          <PaginationComponent />
-        </Stack>
-      </Container>
-    </>
+        <PropertyList />
+      </Stack>
+    </PageContainer>
   );
 }

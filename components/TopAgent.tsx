@@ -15,7 +15,7 @@ import agent1 from "public/assets/agent-1.jpg";
 import agent2 from "public/assets/agent-2.jpg";
 import agent3 from "public/assets/agent-3.jpg";
 
-function TopAgent() {
+function TopAgent({ width, rowItems }: LayoutWidth) {
   const topAgents = [
     {
       name: "Benny Chagur",
@@ -47,7 +47,11 @@ function TopAgent() {
         p: "1.25rem",
         backgroundColor: "cardBg",
         borderRadius: "0.625rem",
-        width: "100%",
+        width: {
+          xs: "100%",
+          lg: "calc(50% - 0.625rem)",
+          xl: `calc(${width}% - ${(1.25 * (rowItems - 1)) / rowItems}rem)`,
+        },
       }}
       spacing="1.25rem"
     >
@@ -117,6 +121,12 @@ function TopAgent() {
               PaperProps={{
                 variant: "outlined",
                 elevation: 0,
+                sx: {
+                  borderRadius: "0.5rem",
+                  "& .MuiMenuItem-root": {
+                    fontSize: "0.875rem",
+                  },
+                },
               }}
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>

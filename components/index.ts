@@ -1,5 +1,4 @@
 export { default as Logo } from "./Logo";
-export { default as SwitchTheme } from "./SwitchTheme";
 export { default as LatestSales } from "./LatestSales";
 export { default as DashboardCards } from "./DashboardCards";
 export { default as PropertyReferrals } from "./PropertyReferrals";
@@ -7,3 +6,11 @@ export { default as TopAgent } from "./TopAgent";
 export { default as PaginationComponent } from "./PaginationComponent";
 export { default as AgentDetails } from "./AgentDetails";
 export { default as PropertyList } from "./PropertyList";
+export { default as RatingComponent } from "./RatingComponent";
+export { default as TopBar } from "./TopBar";
+export { default as TopBarProfile } from "./TopBarProfile";
+export { default as TopBarNotifications } from "./TopBarNotifications";
+export { default as SearchBar } from "./SearchBar";
+export { default as MobileNavigation } from "./MobileNavigation";
+export { default as DesktopNavigation } from "./DesktopNavigation";
+export { default as PageContainer } from "./PageContainer";

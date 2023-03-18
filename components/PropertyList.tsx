@@ -16,9 +16,9 @@ import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 import propImage1 from "public/assets/property-large-1.jpg";
 import propImage2 from "public/assets/property-large-2.jpg";
@@ -44,6 +44,30 @@ function PropertyList() {
     },
     {
       image: propImage3,
+      name: "Metro Jayakar Apartment",
+      location: "North Carolina, USA",
+      price: 650,
+    },
+    {
+      image: propImage1,
+      name: "Taiwo Adewale Apartment",
+      location: "Lagos, Nigeria",
+      price: 340,
+    },
+    {
+      image: propImage2,
+      name: "Metro Jayakar Apartment",
+      location: "North Carolina, USA",
+      price: 500,
+    },
+    {
+      image: propImage3,
+      name: "Letdo Ji Hotel & Aportment",
+      location: "Carolina North, UK",
+      price: 450,
+    },
+    {
+      image: propImage1,
       name: "Metro Jayakar Apartment",
       location: "North Carolina, USA",
       price: 650,
@@ -147,12 +171,23 @@ function PropertyList() {
         </Stack>
       </Stack>
 
-      <Stack direction="row" spacing="1.25rem">
+      <Stack
+        direction="row"
+        spacing="1.25rem"
+        sx={{
+          display: {
+            xs: "none",
+            sm: "flex",
+          },
+        }}
+      >
         <Swiper
           slidesPerView="auto"
           spaceBetween={24}
           loop={true}
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: true }}
+          speed={700}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -221,7 +256,7 @@ function PropertyList() {
 
         <Stack justifyContent="center">
           <IconButton
-            className=".swiper-button-next"
+            className="swiper-button-next"
             sx={{
               boxShadow:
                 theme.palette.mode === "light"
@@ -232,6 +267,62 @@ function PropertyList() {
             <NavigateNextRoundedIcon />
           </IconButton>
         </Stack>
+      </Stack>
+
+      <Stack sx={{ display: { sm: "none" } }} spacing="1.5rem">
+        {properties.slice(0, 3).map((item, index) => (
+          <Stack key={`property-list-mobile-${index}`} spacing="0.625rem">
+            <Box>
+              <Image
+                src={item.image}
+                alt={item.name}
+                style={{
+                  borderRadius: "0.625rem",
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                }}
+              />
+            </Box>
+
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="flex-start"
+            >
+              <Stack spacing="0.25rem">
+                <Typography variant="h3">{item.name}</Typography>
+
+                <Stack direction="row" alignItems="center" spacing="0.3rem">
+                  <LocationOnIcon
+                    sx={{ width: "1.125rem", height: "1.125rem" }}
+                  />
+                  <Typography variant="body2">{item.location}</Typography>
+                </Stack>
+              </Stack>
+
+              <Box
+                sx={{
+                  backgroundColor:
+                    theme.palette.mode === "light" ? "#DADEFA" : "#111315",
+                  borderRadius: "0.25rem",
+                  p: "0.5rem",
+                }}
+              >
+                <Typography
+                  component="span"
+                  sx={{
+                    fontSize: "0.75rem !important",
+                    color: "primary.main",
+                    fontWeight: 600,
+                  }}
+                >
+                  ${item.price}
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+        ))}
       </Stack>
     </Stack>
   );
