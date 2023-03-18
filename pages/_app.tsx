@@ -62,6 +62,25 @@ export default function MyApp(props: MyAppProps) {
           name="apple-mobile-web-app-status-bar-style"
           content={mode === "light" ? "#FCFCFC" : "#1A1D1F"}
         />
+        <title>Yandox - Dashboard</title>
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
       </Head>
 
       <ThemeProvider theme={theme}>
