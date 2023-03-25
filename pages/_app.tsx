@@ -17,7 +17,7 @@ export interface MyAppProps extends AppProps {
 }
 
 export default function MyApp(props: MyAppProps) {
-  const [mode, setMode] = React.useState<PaletteMode>("light");
+  const [mode, setMode] = React.useState<PaletteMode>("dark");
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   const theme = React.useMemo(
