@@ -226,6 +226,7 @@ function TotalRevenue({ width, rowItems }: LayoutWidth) {
         </Stack>
       </Stack>
 
+      {/* mobile chart */}
       <Box
         sx={{
           display: { xs: "block", sm: "none" },
@@ -255,10 +256,15 @@ function TotalRevenue({ width, rowItems }: LayoutWidth) {
         />
       </Box>
 
-      <Box sx={{ display: { xs: "none", sm: "block" } }}>
+      <Box
+        sx={{
+          display: { xs: "none", sm: "block", height: "220px" },
+        }}
+      >
         <Bar
           data={getRevenueData(7)}
           options={{
+            maintainAspectRatio: false,
             scales: {
               y: {
                 grid: { display: false },
