@@ -11,7 +11,11 @@ function PageContainer({ children, title, buttonText }: IProps) {
   return (
     <Stack sx={{ px: { sm: "1.5rem" }, py: "1.75rem" }} spacing="1.25rem">
       <Stack
-        sx={{ px: { xs: "1.125rem", sm: 0 }, justifyContent: "space-between" }}
+        sx={{
+          px: { xs: "1.125rem", sm: 0 },
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
         direction="row"
       >
         <Typography
