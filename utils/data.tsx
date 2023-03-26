@@ -8,6 +8,17 @@ import propImage1 from "public/assets/property-1.jpg";
 import propImage2 from "public/assets/property-2.jpg";
 import propImage3 from "public/assets/property-3.jpg";
 
+import agent1 from "public/assets/agent-1-large.jpg";
+import agent2 from "public/assets/agent-2-large.jpg";
+import agent3 from "public/assets/agent-3-large.jpg";
+import agent4 from "public/assets/agent-4-large.jpg";
+
+import rating1 from "public/assets/rating-1.jpg";
+import rating2 from "public/assets/rating-2.jpg";
+import rating3 from "public/assets/rating-3.jpg";
+import rating4 from "public/assets/rating-4.jpg";
+import rating5 from "public/assets/rating-5.jpg";
+
 import propImageLarge1 from "public/assets/property-large-1.jpg";
 import propImageLarge2 from "public/assets/property-large-2.jpg";
 import propImageLarge3 from "public/assets/property-large-3.jpg";
@@ -193,5 +204,97 @@ export const revenueChartData = [
     month: "Jul",
     lastRevenue: 450,
     runningRevenue: 200,
+  },
+];
+
+export const agents = [
+  {
+    name: "Karen Eilla Boyette",
+    role: "Real-Estate Agent",
+    email: "kareneboyette@armyspy.com",
+    location: "Manchester",
+    phone: "+502-324-4194",
+    propertyNo: 15,
+    image: agent1,
+  },
+  {
+    name: "Walter Devid Moye",
+    role: "Real-Estate Agent",
+    email: "walterdevidmoye@armyspy.com",
+    location: "Chicago, Canada",
+    phone: "+457-324-4147",
+    propertyNo: 10,
+    image: agent2,
+  },
+  {
+    name: "David Smith Raddy",
+    role: "Real-Estate Agent",
+    email: "davidsmith1@armyspy.com",
+    location: "Manchester",
+    phone: "+584-324-7835",
+    propertyNo: 15,
+    image: agent3,
+  },
+  {
+    name: "Jhon Haron Bably",
+    role: "Real-Estate Agent",
+    email: "haronbablye@armyspy.com",
+    location: "Chicago, Canada",
+    phone: "+502-324-4194",
+    propertyNo: 12,
+    image: agent4,
+  },
+];
+
+export const reviews = [
+  {
+    name: "James Sullivan",
+    id: "#C01234",
+    dateJoined: "25-04-2022",
+    time: "12:42 PM",
+    rating: 5,
+    ratingType: "good",
+    ratingChips: ["Excellent", "Great", "Best Service"],
+    image: rating1,
+  },
+  {
+    name: "Jakir Hussen",
+    id: "#C01225",
+    dateJoined: "15-09-2022",
+    time: "11:40 AM",
+    rating: 1,
+    ratingType: "bad",
+    ratingChips: ["Bad Service", "Unexpected"],
+    image: rating2,
+  },
+  {
+    name: "Deborah Saragi",
+    id: "#C01245",
+    dateJoined: "25-10-2022",
+    time: "10:22 PM",
+    rating: 4,
+    ratingType: "good",
+    ratingChips: ["Excellent", "Great", "Best Service"],
+    image: rating3,
+  },
+  {
+    name: "Delwar Hussen",
+    id: "#C01248",
+    dateJoined: "15-08-2022",
+    time: "12:42 AM",
+    rating: 2,
+    ratingType: "bad",
+    ratingChips: ["Bad Service", "Unexpected"],
+    image: rating4,
+  },
+  {
+    name: "Jubed Ahmed",
+    id: "#C01287",
+    dateJoined: "24-04-2022",
+    time: "08:42 PM",
+    rating: 5,
+    ratingType: "good",
+    ratingChips: ["Excellent", "Great", "Best Service"],
+    image: rating5,
   },
 ];

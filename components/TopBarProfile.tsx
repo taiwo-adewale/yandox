@@ -15,7 +15,7 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 import ToggleOffIcon from "@mui/icons-material/ToggleOff";
-import userAvatar from "public/assets/agent-1.jpg";
+import userAvatar from "public/assets/profile.jpg";
 
 interface IProps {
   setMode: (val: PaletteMode) => void;

@@ -2,7 +2,7 @@ import { Stack, Box } from "@mui/material";
 import {
   PageContainer,
   DashboardCards,
-  PropertyList,
+  PropertyListHome,
   PropertyReferrals,
   TopAgent,
   LatestSales,
@@ -31,7 +31,7 @@ export default function Home() {
           <LatestSales width={37} rowItems={3} />
         </Box>
 
-        <PropertyList />
+        <PropertyListHome />
       </Stack>
     </PageContainer>
   );

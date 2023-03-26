@@ -14,6 +14,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import agent1 from "public/assets/agent-1.jpg";
 import agent2 from "public/assets/agent-2.jpg";
 import agent3 from "public/assets/agent-3.jpg";
+import { NextLinkComposed } from "utils/Link";
 
 function TopAgent({ width, rowItems }: LayoutWidth) {
   const topAgents = [
@@ -63,6 +64,8 @@ function TopAgent({ width, rowItems }: LayoutWidth) {
         {/* @ts-ignore */}
         <Button
           variant="outlined"
+          component={NextLinkComposed}
+          to="/agent"
           //@ts-ignore
           color="textSecondary"
           sx={{ fontWeight: 600, textTransform: "capitalize !important" }}

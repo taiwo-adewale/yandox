@@ -1,276 +1,147 @@
-import { useState } from "react";
 import Image from "next/image";
-import {
-  Stack,
-  Typography,
-  Button,
-  FormControl,
-  Select,
-  MenuItem,
-  Box,
-  IconButton,
-} from "@mui/material";
-import { SelectChangeEvent } from "@mui/material/Select";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/autoplay";
+import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
+import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
 
 import { properties } from "utils/data";
 
 function PropertyList() {
   const theme = useTheme();
-  const [activeFilter, setActiveFilter] = useState<string>("Popular");
-  const [selectFilter, setSelectFilter] = useState<string>("most-recent");
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setSelectFilter(event.target.value);
-  };
 
   return (
-    <Stack
-      sx={{ p: "1.25rem", backgroundColor: "cardBg", borderRadius: "1rem" }}
-      spacing="1.125rem"
-    >
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        gap="1rem"
-        flexWrap={{
-          xs: "wrap",
-          md: "nowrap",
-        }}
-      >
-        <Typography variant="h2" marginRight="1.5rem">
-          Property List
-        </Typography>
-
-        <Stack
-          direction="row"
-          gap="0.625rem"
-          flexWrap={{
-            xs: "wrap",
-            md: "nowrap",
-          }}
-        >
-          {["Popular", "Recommended", "Newest"].map((text, index) => (
-            <Button
-              key={`property-list-${index}`}
-              sx={{
-                textTransform: "none",
-                backgroundColor:
-                  activeFilter === text ? "primary.main" : "secondary.main",
-                color: activeFilter === text ? "#FCFCFC" : "textSecondary.main",
-                px: "0.625rem",
-                py: "0.5rem",
-                borderRadius: "0.375rem",
-                fontSize: "0.75rem",
-                "&:hover": {
-                  backgroundColor:
-                    activeFilter === text ? "primary.main" : "altPrimary.main",
-                  color: activeFilter === text ? "#FCFCFC" : "textPrimary.main",
-                },
-              }}
-              onClick={() => setActiveFilter(text)}
-            >
-              {text}
-            </Button>
-          ))}
-
-          <FormControl size="small">
-            <Select
-              value={selectFilter}
-              onChange={handleChange}
-              displayEmpty
-              IconComponent={ExpandMoreRoundedIcon}
-              sx={{
-                backgroundColor: "secondary.main",
-                color: "textSecondary.main",
-                "&:hover": {
-                  backgroundColor: "altPrimary.main",
-                  color: "textPrimary.main",
-                  "& .MuiSelect-icon": {
-                    color: "textPrimary.main",
-                  },
-                },
-                "& .MuiInputBase-input": {
-                  fontSize: "0.75rem",
-                },
-                "& .MuiSelect-icon": {
-                  color: "textSecondary.main",
-                  width: "1.125rem",
-                },
-                "& fieldset.MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-            >
-              <MenuItem value="most-recent">Most Recent</MenuItem>
-              <MenuItem value="lowest-price">Lowest Price</MenuItem>
-              <MenuItem value="highest-price">Highest Price</MenuItem>
-            </Select>
-          </FormControl>
-        </Stack>
-      </Stack>
-
-      <Stack
-        direction="row"
-        spacing="1.25rem"
-        sx={{
-          display: {
-            xs: "none",
-            sm: "flex",
-          },
-        }}
-      >
-        <Swiper
-          slidesPerView="auto"
-          spaceBetween={24}
-          loop={true}
-          modules={[Navigation, Autoplay]}
-          autoplay={{ delay: 3000, disableOnInteraction: true }}
-          speed={700}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          className="mySwiper"
-        >
-          {properties.map((item, index) => (
-            <SwiperSlide
-              key={`property-list-${index}`}
-              style={{ maxWidth: "330px" }}
-            >
-              <Stack spacing="0.625rem">
-                <Box>
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    style={{
-                      borderRadius: "0.625rem",
-                      width: "100%",
-                      height: "auto",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Box>
-
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="flex-start"
-                >
-                  <Stack spacing="0.25rem">
-                    <Typography variant="h3">{item.name}</Typography>
-
-                    <Stack direction="row" alignItems="center" spacing="0.3rem">
-                      <LocationOnIcon
-                        sx={{ width: "1.125rem", height: "1.125rem" }}
-                      />
-                      <Typography variant="body2">{item.location}</Typography>
-                    </Stack>
-                  </Stack>
-
-                  <Box
-                    sx={{
-                      backgroundColor:
-                        theme.palette.mode === "light" ? "#DADEFA" : "#111315",
-                      borderRadius: "0.25rem",
-                      p: "0.5rem",
-                    }}
-                  >
-                    <Typography
-                      component="span"
-                      sx={{
-                        fontSize: "0.75rem !important",
-                        color: "primary.main",
-                        fontWeight: 600,
-                      }}
-                    >
-                      ${item.price}
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Stack>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <Stack justifyContent="center">
-          <IconButton
-            className="swiper-button-next"
-            sx={{
-              boxShadow:
-                theme.palette.mode === "light"
-                  ? "0px 6px 11px rgba(133, 123, 123, 0.1)"
-                  : "0px 6px 11px rgba(0, 0, 0, 0.1)",
-            }}
-          >
-            <NavigateNextRoundedIcon />
-          </IconButton>
-        </Stack>
-      </Stack>
-
-      <Stack sx={{ display: { sm: "none" } }} spacing="1.5rem">
-        {properties.slice(0, 3).map((item, index) => (
-          <Stack key={`property-list-mobile-${index}`} spacing="0.625rem">
-            <Box>
-              <Image
-                src={item.image}
-                alt={item.name}
-                style={{
-                  borderRadius: "0.625rem",
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "cover",
-                }}
-              />
-            </Box>
-
+    <Stack>
+      <Grid container spacing="1.5rem">
+        {properties.map((property, index) => (
+          // @ts-ignore
+          <Grid key={`property-${index}`} item xs={12} md={6} xxl={4}>
             <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="flex-start"
+              sx={{
+                flexWrap: { xs: "wrap", sm: "nowrap" },
+                gap: "0.625rem",
+                flexDirection: {
+                  xs: "row",
+                  md: "column",
+                  xl: "row",
+                },
+              }}
             >
-              <Stack spacing="0.25rem">
-                <Typography variant="h3">{item.name}</Typography>
-
-                <Stack direction="row" alignItems="center" spacing="0.3rem">
-                  <LocationOnIcon
-                    sx={{ width: "1.125rem", height: "1.125rem" }}
-                  />
-                  <Typography variant="body2">{item.location}</Typography>
-                </Stack>
-              </Stack>
-
               <Box
                 sx={{
-                  backgroundColor:
-                    theme.palette.mode === "light" ? "#DADEFA" : "#111315",
-                  borderRadius: "0.25rem",
-                  p: "0.5rem",
+                  width: {
+                    xs: "40%",
+                    sm: "50%",
+                    md: "100%",
+                    xl: "200px",
+                  },
+                  minWidth: "180px",
+                  flexGrow: {
+                    xs: 1,
+                    sm: 0,
+                  },
                 }}
               >
-                <Typography
-                  component="span"
+                <Image
+                  src={property.image}
+                  alt={property.name}
+                  style={{
+                    borderRadius: "0.625rem",
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+
+              <Stack
+                spacing="0.75rem"
+                flex="1"
+                justifyContent="space-between"
+                sx={{
+                  minWidth: "180px",
+                  flexGrow: 1,
+                }}
+              >
+                <Box
                   sx={{
-                    fontSize: "0.75rem !important",
-                    color: "primary.main",
-                    fontWeight: 600,
+                    backgroundColor:
+                      theme.palette.mode === "light" ? "#DADEFA" : "#111315",
+                    borderRadius: "0.25rem",
+                    px: "0.5rem",
+                    py: "0.25rem",
+                    width: "fit-content",
                   }}
                 >
-                  ${item.price}
-                </Typography>
-              </Box>
+                  <Typography
+                    component="span"
+                    sx={{
+                      fontSize: "0.75rem !important",
+                      color: "primary.main",
+                      fontWeight: 600,
+                    }}
+                  >
+                    ${property.price * 4.5}
+                  </Typography>
+                </Box>
+
+                <Stack spacing="0.375rem">
+                  <Typography
+                    variant="body1"
+                    sx={{ fontSize: { sm: "1rem" }, fontWeight: "600" }}
+                  >
+                    {property.name}
+                  </Typography>
+                  <Typography variant="body2">{property.location}</Typography>
+                </Stack>
+
+                <Stack direction="row" spacing="1.5rem">
+                  <Stack
+                    direction="row"
+                    spacing="0.25rem"
+                    color="textSecondary.main"
+                  >
+                    <BedOutlinedIcon
+                      sx={{ width: "1.125rem", height: "1.125rem" }}
+                    />
+                    <Typography
+                      sx={{
+                        fontSize: "0.75rem !important",
+                        fontWeight: "400 !important",
+                      }}
+                    >
+                      3 Beds
+                      {/* {Math.floor(Math.random() * 3) + 3} Beds */}
+                    </Typography>
+                  </Stack>
+
+                  <Stack
+                    direction="row"
+                    spacing="0.25rem"
+                    color="textSecondary.main"
+                  >
+                    <ZoomOutMapIcon
+                      sx={{
+                        width: "1.125rem",
+                        height: "1.125rem",
+                        transform: "rotate(45deg)",
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontSize: "0.75rem !important",
+                        fontWeight: "400 !important",
+                      }}
+                    >
+                      26M
+                      {/* {Math.floor(Math.random() * 10) + 20}M */}
+                    </Typography>
+                  </Stack>
+                </Stack>
+              </Stack>
             </Stack>
-          </Stack>
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </Stack>
   );
 }

@@ -8,7 +8,7 @@ function PaginationComponent() {
       alignItems="center"
       spacing="1rem"
     >
-      <Typography variant="body1">Showing 1 to 5 Reviews</Typography>
+      <Typography variant="body1">Showing 1 to 8 Properties</Typography>
 
       <Stack
         sx={{

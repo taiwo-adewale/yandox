@@ -14,9 +14,15 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 
-import agent1 from "public/assets/agent-1-large.jpg";
-
-function AgentDetails() {
+function AgentDetails({
+  name,
+  role,
+  email,
+  location,
+  phone,
+  propertyNo,
+  image,
+}: Agent) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -46,8 +52,8 @@ function AgentDetails() {
         }}
       >
         <Image
-          src={agent1}
-          alt="seller"
+          src={image}
+          alt={name}
           style={{
             borderRadius: "0.5rem",
             width: "100%",
@@ -79,10 +85,10 @@ function AgentDetails() {
                   },
                 }}
               >
-                Karen Eilla Boyette
+                {name}
               </Typography>
 
-              <Typography variant="body2">Real-Estate Agent</Typography>
+              <Typography variant="body2">{role}</Typography>
             </Stack>
 
             <Box>
@@ -137,7 +143,7 @@ function AgentDetails() {
               sx={{ color: "textSecondary.main" }}
             >
               <MailIcon sx={{ width: "1.125rem", height: "1.125rem" }} />
-              <Typography variant="body2">kareneboyette@armyspy.com</Typography>
+              <Typography variant="body2">{email}</Typography>
             </Stack>
 
             <Stack
@@ -148,7 +154,7 @@ function AgentDetails() {
               sx={{ color: "textSecondary.main" }}
             >
               <LocationOnIcon sx={{ width: "1.125rem", height: "1.125rem" }} />
-              <Typography variant="body2">Manchester</Typography>
+              <Typography variant="body2">{location}</Typography>
             </Stack>
 
             <Stack
@@ -159,7 +165,7 @@ function AgentDetails() {
               sx={{ color: "textSecondary.main" }}
             >
               <LocalPhoneIcon sx={{ width: "1.125rem", height: "1.125rem" }} />
-              <Typography variant="body2">+502-324-4194</Typography>
+              <Typography variant="body2">{phone}</Typography>
             </Stack>
 
             <Stack
@@ -170,7 +176,7 @@ function AgentDetails() {
               sx={{ color: "textSecondary.main" }}
             >
               <ApartmentIcon sx={{ width: "1.125rem", height: "1.125rem" }} />
-              <Typography variant="body2">15 Properties</Typography>
+              <Typography variant="body2">{propertyNo} Properties</Typography>
             </Stack>
           </Box>
         </Stack>

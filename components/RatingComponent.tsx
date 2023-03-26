@@ -3,9 +3,16 @@ import { Stack, Typography, Button, Chip, Rating } from "@mui/material";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
-import rating1 from "public/assets/rating-1.jpg";
-
-function RatingComponent() {
+function RatingComponent({
+  name,
+  id,
+  dateJoined,
+  time,
+  rating,
+  ratingType,
+  ratingChips,
+  image,
+}: Reviews) {
   return (
     <Stack
       sx={{
@@ -29,7 +36,7 @@ function RatingComponent() {
         sx={{ width: { sm: "46%", lg: "25%" } }}
       >
         <Image
-          src={rating1}
+          src={image}
           alt="rater"
           width={70}
           height={70}
@@ -41,16 +48,16 @@ function RatingComponent() {
             variant="body1"
             sx={{ color: "primary.main", fontWeight: "400 !important" }}
           >
-            #C01234
+            {id}
           </Typography>
           <Typography variant="h3" sx={{ fontWeight: "500 !important" }}>
-            James Sullivan
+            {name}
           </Typography>
           <Typography variant="body2" sx={{ fontWeight: "400 !important" }}>
-            Join On 25-04-2022
+            Join On {dateJoined}
           </Typography>
           <Typography variant="body2" sx={{ fontWeight: "400 !important" }}>
-            12:42 PM
+            {time}
           </Typography>
         </Stack>
       </Stack>
@@ -64,7 +71,7 @@ function RatingComponent() {
       >
         <Stack>
           <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
-            Friendly service
+            {ratingType === "good" ? "Friendly" : "Bad"} service
           </Typography>
           <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
             Josh, Lunar and everyone at Just Property in Hastings deserved a big
@@ -78,36 +85,19 @@ function RatingComponent() {
           gap="0.625rem"
           sx={{ flexWrap: { xs: "wrap", sm: "nowrap" } }}
         >
-          <Chip
-            label="EXCELLENT"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            sx={{
-              fontWeight: 600,
-              fontSize: { xs: "0.75rem", sm: "0.875rem" },
-            }}
-          />
-          <Chip
-            label="GREAT"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            sx={{
-              fontWeight: 600,
-              fontSize: { xs: "0.75rem", sm: "0.875rem" },
-            }}
-          />
-          <Chip
-            label="BEST SERVICE"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            sx={{
-              fontWeight: 600,
-              fontSize: { xs: "0.75rem", sm: "0.875rem" },
-            }}
-          />
+          {ratingChips.map((item, index) => (
+            <Chip
+              key={`rating-chip-${index}`}
+              label={item.toUpperCase()}
+              variant="outlined"
+              color={ratingType === "good" ? "primary" : "error"}
+              size="medium"
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: "0.75rem", sm: "0.875rem" },
+              }}
+            />
+          ))}
         </Stack>
       </Stack>
 
@@ -122,13 +112,13 @@ function RatingComponent() {
       >
         <Stack direction="row" spacing="0.375rem" alignItems="center">
           <Typography sx={{ fontSize: "1.375rem !important", fontWeight: 600 }}>
-            4.0
+            {rating}.0
           </Typography>
 
           <Rating
             icon={<StarRoundedIcon />}
             emptyIcon={<StarOutlineRoundedIcon />}
-            value={4}
+            value={rating}
             readOnly
           />
         </Stack>

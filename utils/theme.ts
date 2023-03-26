@@ -65,6 +65,7 @@ export const lightTheme = {
       md: 768,
       lg: 1024,
       xl: 1200,
+      xxl: 2000,
     },
   },
 };
@@ -112,6 +113,7 @@ export const darkTheme = {
       md: 768,
       lg: 1024,
       xl: 1200,
+      xxl: 2000,
     },
   },
 };
