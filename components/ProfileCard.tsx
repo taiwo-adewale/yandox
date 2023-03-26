@@ -70,8 +70,6 @@ function ProfileCard() {
     </Stack>
   );
 
-  return null;
-
   return (
     <Stack
       direction={{
@@ -91,7 +89,6 @@ function ProfileCard() {
     >
       <Box
         sx={{
-          width: { xl: "30%" },
           position: "relative",
           p: {
             xs: "0",
@@ -106,9 +103,25 @@ function ProfileCard() {
               xs: "1rem",
               md: "1rem 0 0 1rem",
             },
+            width: {
+              xs: "100%",
+              md: "240px",
+              lg: "280px",
+              xl: "340px",
+            },
+            height: {
+              xs: "280px",
+              md: "340px",
+              lg: "360px",
+              xl: "340px",
+            },
           }}
         >
-          <Image src={profileImage} alt="" />
+          <Image
+            src={profileImage}
+            alt=""
+            style={{ width: "100%", objectFit: "cover" }}
+          />
         </Box>
 
         <Box
@@ -133,7 +146,7 @@ function ProfileCard() {
       </Box>
 
       <Stack
-        spacing="3rem"
+        spacing="1rem"
         direction="row"
         flex={1}
         sx={{
@@ -172,21 +185,28 @@ function ProfileCard() {
             </Typography>
           </Stack>
 
-          <Stack spacing="1.25rem">
+          <Stack
+            spacing={{
+              xs: "1.25rem",
+              md: "1rem",
+              xl: "1.375rem",
+            }}
+          >
             <Detail
               title="Address"
-              value="4517 Washington Ave. Manchaster, Kentucky 39495"
+              value="4517 Washington Ave. Manchaster, Kentucky"
               icon={<LocationOnIcon fontSize="small" />}
             />
 
             <Stack
               direction={{
-                xs: "column",
-                md: "row",
+                lg: "column",
+                xl: "row",
               }}
               spacing={{
                 xs: "1.25rem",
-                md: "1.375rem",
+                md: "1rem",
+                xl: "1.375rem",
               }}
             >
               <Detail
