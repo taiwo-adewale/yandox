@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Yandox - Admin Dashboard for Property Listings
 
-## Getting Started
+Welcome to Yandox, an elegant admin dashboard designed for managing property listings on a real estate website.
 
-First, run the development server:
+![Page screenshot](https://yandox.vercel.app/assets/screenshot.png)
+
+## Description
+
+Yandox is a robust admin dashboard built using Next.js and Material UI. It serves as the central hub for property management, providing administrators with tools to create, edit, and manage property listings effectively.
+
+## Technologies Used
+
+- HTML
+- CSS
+- Next.js
+- Material UI
+
+## Installation
+
+To set up Yandox locally, follow these steps:
 
 ```bash
+# Clone the repository:
+git clone https://github.com/taiwo-adewale/yandox.git
+
+# Navigate to the project directory:
+cd yandox
+
+# Install dependencies:
+npm install
+
+# Start the development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Yandox is designed for property management and administration. It provides a user-friendly interface for adding, editing, and managing property listings on your website.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Contribution
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Contributions to Yandox are welcome. If you'd like to contribute, please follow these guidelines:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes, ensuring clear code and comments.
+4. Submit a pull request, describing your changes in detail.
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For questions, feedback, or inquiries, feel free to reach out to us at [adewaletaiwo08@gmail.com](mailto:adewaletaiwo08@gmail.com).
