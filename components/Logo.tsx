@@ -44,7 +44,7 @@ function Logo({ mobile, setMobileOpen }: IProps) {
         <LogoSvg color="primary" fontSize="large" />
 
         <Typography
-          color={theme.palette.mode === "dark" ? "#6C5DD3" : "textPrimary"}
+          color={theme.palette.mode === "dark" ? "#475BE8" : "textPrimary"}
           component="span"
           fontWeight={700}
           sx={{
